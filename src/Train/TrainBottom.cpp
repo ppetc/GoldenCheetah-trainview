@@ -187,10 +187,10 @@ TrainBottom::TrainBottom(TrainSidebar *trainSidebar, QWidget *parent) :
     notificationText = new QPlainTextEdit();
     notifications->addWidget(notificationText);
 
-    QFont font("Monospace");
-    font.setStyleHint(QFont::TypeWriter);
-    font.setBold(1);
-    font.setPointSize(14);
+    QFont font("Helvetica [Cronyx]");
+    //font.setStyleHint(QFont::TypeWriter);
+    font.setBold(0);
+    font.setPointSize(21);
 
     notificationText->setFont(font);
     notificationText->setStyleSheet("QPlainTextEdit {background-color: black; color: red}");
@@ -240,7 +240,7 @@ TrainBottom::TrainBottom(TrainSidebar *trainSidebar, QWidget *parent) :
     // Ensure the bottom bar is sized to show 3 lines of notification text
     // but don't allow it to crop the buttons if smaller font is used..
     int buttonHeight = m_connectButton->sizeHint().height();
-    int notificationHeight = 3 * notificationText->fontMetrics().lineSpacing();
+    int notificationHeight = 2 * notificationText->fontMetrics().lineSpacing();
     int contentHeight = qMax(buttonHeight, notificationHeight);
 
     int layoutMargins = allControlsLayout->contentsMargins().top() +
