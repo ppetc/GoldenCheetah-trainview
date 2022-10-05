@@ -50,18 +50,18 @@ TrainBottom::TrainBottom(TrainSidebar *trainSidebar, QWidget *parent) :
     m_connectButton->setShortcut(Qt::Key_MediaPrevious);
     toolbuttons->addWidget(m_connectButton);
 
-    QIcon rewIcon(":images/oxygen/rewind.png");
-    m_rewindButton = new QPushButton(rewIcon, "", this);
-    m_rewindButton->setFocusPolicy(Qt::NoFocus);
-    m_rewindButton->setIconSize(QSize(64,64));
-    m_rewindButton->setAutoFillBackground(false);
-    m_rewindButton->setAutoDefault(false);
-    m_rewindButton->setFlat(true);
-    m_rewindButton->setStyleSheet("background-color: rgba( 255, 255, 255, 0% ); border: 0px;");
-    m_rewindButton->setAutoRepeat(true);
-    m_rewindButton->setAutoRepeatDelay(400);
-    m_rewindButton->setShortcut(Qt::Key_MediaPrevious);
-    toolbuttons->addWidget(m_rewindButton);
+    //QIcon rewIcon(":images/oxygen/rewind.png");
+    //m_rewindButton = new QPushButton(rewIcon, "", this);
+    //m_rewindButton->setFocusPolicy(Qt::NoFocus);
+    //m_rewindButton->setIconSize(QSize(64,64));
+    //m_rewindButton->setAutoFillBackground(false);
+    //m_rewindButton->setAutoDefault(false);
+    //m_rewindButton->setFlat(true);
+    //m_rewindButton->setStyleSheet("background-color: rgba( 255, 255, 255, 0% ); border: 0px;");
+    //m_rewindButton->setAutoRepeat(true);
+    //m_rewindButton->setAutoRepeatDelay(400);
+    //m_rewindButton->setShortcut(Qt::Key_MediaPrevious);
+    //toolbuttons->addWidget(m_rewindButton);
 
     QIcon stopIcon(":images/oxygen/stop.png");
     m_stopButton = new QPushButton(stopIcon, "", this);
@@ -85,78 +85,78 @@ TrainBottom::TrainBottom(TrainSidebar *trainSidebar, QWidget *parent) :
     m_playButton->setShortcut(Qt::Key_MediaTogglePlayPause);
     toolbuttons->addWidget(m_playButton);
 
-    QIcon fwdIcon(":images/oxygen/ffwd.png");
-    m_forwardButton = new QPushButton(fwdIcon, "", this);
-    m_forwardButton->setFocusPolicy(Qt::NoFocus);
-    m_forwardButton->setIconSize(QSize(64,64));
-    m_forwardButton->setAutoFillBackground(false);
-    m_forwardButton->setAutoDefault(false);
-    m_forwardButton->setFlat(true);
-    m_forwardButton->setStyleSheet("background-color: rgba( 255, 255, 255, 0% ); border: 0px;");
-    m_forwardButton->setAutoRepeat(true);
-    m_forwardButton->setAutoRepeatDelay(400);
-    m_forwardButton->setShortcut(Qt::Key_MediaNext);
-    toolbuttons->addWidget(m_forwardButton);
+    //QIcon fwdIcon(":images/oxygen/ffwd.png");
+    //m_forwardButton = new QPushButton(fwdIcon, "", this);
+    //m_forwardButton->setFocusPolicy(Qt::NoFocus);
+    //m_forwardButton->setIconSize(QSize(64,64));
+    //m_forwardButton->setAutoFillBackground(false);
+    //m_forwardButton->setAutoDefault(false);
+    //m_forwardButton->setFlat(true);
+    //m_forwardButton->setStyleSheet("background-color: rgba( 255, 255, 255, 0% ); border: 0px;");
+    //m_forwardButton->setAutoRepeat(true);
+    //m_forwardButton->setAutoRepeatDelay(400);
+    //m_forwardButton->setShortcut(Qt::Key_MediaNext);
+    //toolbuttons->addWidget(m_forwardButton);
 
-    QIcon backLapIcon(":images/oxygen/back.png");
-    backLap = new QPushButton(backLapIcon, "", this);
-    backLap->setFocusPolicy(Qt::NoFocus);
-    backLap->setIconSize(QSize(64,64));
-    backLap->setAutoFillBackground(false);
-    backLap->setAutoDefault(false);
-    backLap->setFlat(true);
-    backLap->setStyleSheet("background-color: rgba( 255, 255, 255, 0% ); border: 0px;");
-    backLap->setAutoRepeat(true);
-    backLap->setAutoRepeatDelay(400);
-    toolbuttons->addWidget(backLap);
+    //QIcon backLapIcon(":images/oxygen/back.png");
+    //backLap = new QPushButton(backLapIcon, "", this);
+    //backLap->setFocusPolicy(Qt::NoFocus);
+    //backLap->setIconSize(QSize(64,64));
+    //backLap->setAutoFillBackground(false);
+    //backLap->setAutoDefault(false);
+    //backLap->setFlat(true);
+    //backLap->setStyleSheet("background-color: rgba( 255, 255, 255, 0% ); border: 0px;");
+    //backLap->setAutoRepeat(true);
+    //backLap->setAutoRepeatDelay(400);
+    //toolbuttons->addWidget(backLap);
 
-    QIcon lapIcon(":images/oxygen/lap.png");
-    m_lapButton = new QPushButton(lapIcon, "", this);
-    m_lapButton->setFocusPolicy(Qt::NoFocus);
-    m_lapButton->setIconSize(QSize(64,64));
-    m_lapButton->setAutoFillBackground(false);
-    m_lapButton->setAutoDefault(false);
-    m_lapButton->setFlat(true);
-    m_lapButton->setStyleSheet("background-color: rgba( 255, 255, 255, 0% ); border: 0px;");
-    m_lapButton->setShortcut(Qt::Key_0);
-    toolbuttons->addWidget(m_lapButton);
+    //QIcon lapIcon(":images/oxygen/lap.png");
+    //m_lapButton = new QPushButton(lapIcon, "", this);
+    //m_lapButton->setFocusPolicy(Qt::NoFocus);
+    //m_lapButton->setIconSize(QSize(64,64));
+    //m_lapButton->setAutoFillBackground(false);
+    //m_lapButton->setAutoDefault(false);
+    //m_lapButton->setFlat(true);
+    //m_lapButton->setStyleSheet("background-color: rgba( 255, 255, 255, 0% ); border: 0px;");
+    //m_lapButton->setShortcut(Qt::Key_0);
+    //toolbuttons->addWidget(m_lapButton);
 
-    QIcon fwdLapIcon(":images/oxygen/fwd.png");
-    fwdLap = new QPushButton(fwdLapIcon, "", this);
-    fwdLap->setFocusPolicy(Qt::NoFocus);
-    fwdLap->setIconSize(QSize(64,64));
-    fwdLap->setAutoFillBackground(false);
-    fwdLap->setAutoDefault(false);
-    fwdLap->setFlat(true);
-    fwdLap->setStyleSheet("background-color: rgba( 255, 255, 255, 0% ); border: 0px;");
-    fwdLap->setAutoRepeat(true);
-    fwdLap->setAutoRepeatDelay(400);
-    fwdLap->setShortcut(Qt::Key_MediaLast);
-    toolbuttons->addWidget(fwdLap);
+    //QIcon fwdLapIcon(":images/oxygen/fwd.png");
+    //fwdLap = new QPushButton(fwdLapIcon, "", this);
+    //fwdLap->setFocusPolicy(Qt::NoFocus);
+    //fwdLap->setIconSize(QSize(64,64));
+    //fwdLap->setAutoFillBackground(false);
+    //fwdLap->setAutoDefault(false);
+    //fwdLap->setFlat(true);
+    //fwdLap->setStyleSheet("background-color: rgba( 255, 255, 255, 0% ); border: 0px;");
+    //fwdLap->setAutoRepeat(true);
+    //fwdLap->setAutoRepeatDelay(400);
+    //fwdLap->setShortcut(Qt::Key_MediaLast);
+    //toolbuttons->addWidget(fwdLap);
 
-    QIcon calIcon(":images/oxygen/cal.png");
-    cal = new QPushButton(calIcon, "", this);
-    cal->setFocusPolicy(Qt::NoFocus);
-    cal->setIconSize(QSize(64,64));
-    cal->setAutoFillBackground(false);
-    cal->setAutoDefault(false);
-    cal->setFlat(true);
-    cal->setStyleSheet("background-color: rgba( 255, 255, 255, 0% ); border: 0px;");
-    cal->setShortcut(Qt::Key_C);
-    toolbuttons->addWidget(cal);
+    //QIcon calIcon(":images/oxygen/cal.png");
+    //cal = new QPushButton(calIcon, "", this);
+    //cal->setFocusPolicy(Qt::NoFocus);
+    //cal->setIconSize(QSize(64,64));
+    //cal->setAutoFillBackground(false);
+    //cal->setAutoDefault(false);
+    //cal->setFlat(true);
+    //cal->setStyleSheet("background-color: rgba( 255, 255, 255, 0% ); border: 0px;");
+    //cal->setShortcut(Qt::Key_C);
+    //toolbuttons->addWidget(cal);
 
-    QIcon upIcon(":images/oxygen/up.png");
-    loadUp = new QPushButton(upIcon, "", this);
-    loadUp->setFocusPolicy(Qt::NoFocus);
-    loadUp->setIconSize(QSize(64,64));
-    loadUp->setAutoFillBackground(false);
-    loadUp->setAutoDefault(false);
-    loadUp->setFlat(true);
-    loadUp->setAutoRepeat(true);
-    loadUp->setAutoRepeatInterval(50);
-    loadUp->setStyleSheet("background-color: rgba( 255, 255, 255, 0% ); border: 0px;");
-    loadUp->setShortcut(Qt::Key_Plus);
-    toolbuttons->addWidget(loadUp);
+    //QIcon upIcon(":images/oxygen/up.png");
+    //loadUp = new QPushButton(upIcon, "", this);
+    //loadUp->setFocusPolicy(Qt::NoFocus);
+    //loadUp->setIconSize(QSize(64,64));
+    //loadUp->setAutoFillBackground(false);
+    //loadUp->setAutoDefault(false);
+    //loadUp->setFlat(true);
+    //loadUp->setAutoRepeat(true);
+    //loadUp->setAutoRepeatInterval(50);
+    //loadUp->setStyleSheet("background-color: rgba( 255, 255, 255, 0% ); border: 0px;");
+    //loadUp->setShortcut(Qt::Key_Plus);
+    //toolbuttons->addWidget(loadUp);
 
     QIcon downIcon(":images/oxygen/down.png");
     loadDown = new QPushButton(downIcon, "", this);
@@ -171,13 +171,13 @@ TrainBottom::TrainBottom(TrainSidebar *trainSidebar, QWidget *parent) :
     loadDown->setShortcut(Qt::Key_Minus);
     toolbuttons->addWidget(loadDown);
 
-    intensitySlider = new QSlider(Qt::Vertical, this);
-    intensitySlider->setAutoFillBackground(false);
-    intensitySlider->setFocusPolicy(Qt::NoFocus);
-    intensitySlider->setMinimum(75);
-    intensitySlider->setMaximum(125);
-    intensitySlider->setValue(100);
-    toolbuttons->addWidget(intensitySlider);
+    //intensitySlider = new QSlider(Qt::Vertical, this);
+    //intensitySlider->setAutoFillBackground(false);
+    //intensitySlider->setFocusPolicy(Qt::NoFocus);
+    //intensitySlider->setMinimum(75);
+    //intensitySlider->setMaximum(125);
+    //intensitySlider->setValue(100);
+    //toolbuttons->addWidget(intensitySlider);
 
     // notification area
     QHBoxLayout *notifications = new QHBoxLayout();
@@ -207,11 +207,11 @@ TrainBottom::TrainBottom(TrainSidebar *trainSidebar, QWidget *parent) :
     allControlsLayout->addLayout(notifications);
 
     connect(m_playButton, SIGNAL(clicked()), m_trainSidebar, SLOT(Start()));
-    connect(m_rewindButton, SIGNAL(clicked()), m_trainSidebar, SLOT(Rewind()));
-    connect(m_forwardButton, SIGNAL(clicked()), m_trainSidebar, SLOT(FFwd()));
-    connect(backLap, SIGNAL(clicked()), m_trainSidebar, SLOT(RewindLap()));
-    connect(m_lapButton, SIGNAL(clicked()), m_trainSidebar, SLOT(newLap()));
-    connect(fwdLap, SIGNAL(clicked()), m_trainSidebar, SLOT(FFwdLap()));
+    //connect(m_rewindButton, SIGNAL(clicked()), m_trainSidebar, SLOT(Rewind()));
+    //connect(m_forwardButton, SIGNAL(clicked()), m_trainSidebar, SLOT(FFwd()));
+    //connect(backLap, SIGNAL(clicked()), m_trainSidebar, SLOT(RewindLap()));
+    //connect(m_lapButton, SIGNAL(clicked()), m_trainSidebar, SLOT(newLap()));
+    //connect(fwdLap, SIGNAL(clicked()), m_trainSidebar, SLOT(FFwdLap()));
     connect(m_stopButton, SIGNAL(clicked()), m_trainSidebar, SLOT(Stop()));
     connect(m_trainSidebar->context, SIGNAL(start()), this, SLOT(updatePlayButtonIcon()));
     connect(m_trainSidebar->context, SIGNAL(pause()), this, SLOT(updatePlayButtonIcon()));
@@ -220,12 +220,12 @@ TrainBottom::TrainBottom(TrainSidebar *trainSidebar, QWidget *parent) :
     //connect(hideOnIdle, SIGNAL(stateChanged(int)), this, SLOT(autoHideCheckboxChanged(int)));
     connect(m_trainSidebar, SIGNAL(statusChanged(int)), this, SLOT(statusChanged(int)));
     connect(m_connectButton, SIGNAL(released()), m_trainSidebar, SLOT(toggleConnect()));
-    connect(cal, SIGNAL(clicked()), m_trainSidebar, SLOT(Calibrate()));
+    //connect(cal, SIGNAL(clicked()), m_trainSidebar, SLOT(Calibrate()));
 
-    connect(loadUp, SIGNAL(clicked()), m_trainSidebar, SLOT(Higher()));
+    //connect(loadUp, SIGNAL(clicked()), m_trainSidebar, SLOT(Higher()));
     connect(loadDown, SIGNAL(clicked()), m_trainSidebar, SLOT(Lower()));
-    connect(intensitySlider, SIGNAL(valueChanged(int)), m_trainSidebar, SLOT(adjustIntensity(int)));
-    connect(m_trainSidebar, SIGNAL(intensityChanged(int)), intensitySlider, SLOT(setValue(int)));
+    //connect(intensitySlider, SIGNAL(valueChanged(int)), m_trainSidebar, SLOT(adjustIntensity(int)));
+    //connect(m_trainSidebar, SIGNAL(intensityChanged(int)), intensitySlider, SLOT(setValue(int)));
 
     connect(m_trainSidebar, SIGNAL(setNotification(QString, int)), this, SLOT(setNotification(QString, int)));
     connect(m_trainSidebar, SIGNAL(clearNotification(void)), this, SLOT(clearNotification(void)));
@@ -301,15 +301,15 @@ void TrainBottom::statusChanged(int status)
         m_connectButton->setEnabled(true);
         m_playButton->setEnabled(false);
         m_stopButton->setEnabled(false);
-        m_forwardButton->setEnabled(false);
-        m_rewindButton->setEnabled(false);
-        backLap->setEnabled(false);
-        m_lapButton->setEnabled(false);
-        fwdLap->setEnabled(false);
-        cal->setEnabled(false);
-        loadUp->setEnabled(false);
+        //m_forwardButton->setEnabled(false);
+        //m_rewindButton->setEnabled(false);
+        //backLap->setEnabled(false);
+        //m_lapButton->setEnabled(false);
+        //fwdLap->setEnabled(false);
+        //cal->setEnabled(false);
+        //loadUp->setEnabled(false);
         loadDown->setEnabled(false);
-        intensitySlider->setEnabled(false);
+        //intensitySlider->setEnabled(false);
         return;
     }
 
@@ -319,15 +319,15 @@ void TrainBottom::statusChanged(int status)
         m_connectButton->setEnabled(true);
         m_playButton->setEnabled(true);
         m_stopButton->setEnabled(false);
-        m_forwardButton->setEnabled(false);
-        m_rewindButton->setEnabled(false);
-        backLap->setEnabled(false);
-        m_lapButton->setEnabled(false);
-        fwdLap->setEnabled(false);
-        cal->setEnabled(false);
-        loadUp->setEnabled(false);
+        //m_forwardButton->setEnabled(false);
+        //m_rewindButton->setEnabled(false);
+        //backLap->setEnabled(false);
+        //m_lapButton->setEnabled(false);
+        //fwdLap->setEnabled(false);
+        //cal->setEnabled(false);
+        //loadUp->setEnabled(false);
         loadDown->setEnabled(false);
-        intensitySlider->setEnabled(false);
+        //intensitySlider->setEnabled(false);
         return;
     }
 
@@ -337,15 +337,15 @@ void TrainBottom::statusChanged(int status)
         m_connectButton->setEnabled(false);
         m_playButton->setEnabled(true);
         m_stopButton->setEnabled(true);
-        m_forwardButton->setEnabled(false);
-        m_rewindButton->setEnabled(false);
-        backLap->setEnabled(false);
-        m_lapButton->setEnabled(false);
-        fwdLap->setEnabled(false);
-        cal->setEnabled(false);
-        loadUp->setEnabled(false);
+        //m_forwardButton->setEnabled(false);
+        //m_rewindButton->setEnabled(false);
+        //backLap->setEnabled(false);
+        //m_lapButton->setEnabled(false);
+        //fwdLap->setEnabled(false);
+        //cal->setEnabled(false);
+        //loadUp->setEnabled(false);
         loadDown->setEnabled(false);
-        intensitySlider->setEnabled(false);
+        //intensitySlider->setEnabled(false);
         return;
     }
 
@@ -355,15 +355,15 @@ void TrainBottom::statusChanged(int status)
         m_connectButton->setEnabled(false);
         m_playButton->setEnabled(false);
         m_stopButton->setEnabled(true);
-        m_forwardButton->setEnabled(false);
-        m_rewindButton->setEnabled(false);
-        backLap->setEnabled(false);
-        m_lapButton->setEnabled(false);
-        fwdLap->setEnabled(false);
-        cal->setEnabled(true);
-        loadUp->setEnabled(false);
+        //m_forwardButton->setEnabled(false);
+        //m_rewindButton->setEnabled(false);
+        //backLap->setEnabled(false);
+        //m_lapButton->setEnabled(false);
+        //fwdLap->setEnabled(false);
+        //cal->setEnabled(true);
+        //loadUp->setEnabled(false);
         loadDown->setEnabled(false);
-        intensitySlider->setEnabled(false);
+        //intensitySlider->setEnabled(false);
         return;
     }
 
@@ -373,15 +373,15 @@ void TrainBottom::statusChanged(int status)
         m_connectButton->setEnabled(false);
         m_playButton->setEnabled(true);
         m_stopButton->setEnabled(true);
-        m_forwardButton->setEnabled(true);
-        m_rewindButton->setEnabled(true);
-        backLap->setEnabled(true);
-        m_lapButton->setEnabled(true);
-        fwdLap->setEnabled(true);
-        cal->setEnabled(true);
-        loadUp->setEnabled(true);
+        //m_forwardButton->setEnabled(true);
+        //m_rewindButton->setEnabled(true);
+        //backLap->setEnabled(true);
+        //m_lapButton->setEnabled(true);
+        //fwdLap->setEnabled(true);
+        //cal->setEnabled(true);
+        //loadUp->setEnabled(true);
         loadDown->setEnabled(true);
-        intensitySlider->setEnabled(true);
+        //intensitySlider->setEnabled(true);
         return;
     }
 
