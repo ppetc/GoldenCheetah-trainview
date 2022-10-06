@@ -1,6 +1,6 @@
 version: ci.{build}
 build_cloud: PC02-250
-image: Visual Studio 2019
+image: Windows
 clone_depth: 1
 
 environment:
