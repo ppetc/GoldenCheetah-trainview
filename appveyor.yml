@@ -1,4 +1,3 @@
-version: ci.{build}
 build_cloud: PC02-250
 image: Windows
 clone_depth: 1
