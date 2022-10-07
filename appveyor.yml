@@ -52,7 +52,7 @@ init:
 - call c:\"Program Files (x86)"\"Microsoft Visual Studio"\2019\Community\VC\Auxiliary\Build\vcvarsall.bat amd64
 
 # Setup NSIS
-- set PATH=%PATH%;C:\"Program Files (x86)"\NSIS;C:\"Program Files"\Git\bin;;C:\"Program Files"\7-Zip
+- set PATH=%PATH%;C:\"Program Files (x86)"\NSIS;C:\"Program Files"\Git\bin;C:\"Program Files"\7-Zip;C:\tools\vcpkg
 
 cache:
 - gc-ci-libs.zip -> appveyor.yml
