@@ -1930,7 +1930,29 @@ void TrainSidebar::guiUpdate()           // refreshes the telemetry
                     }
                 }
 
-                // Text Cues
+                // alert in sections with 7 seconds and more
+                if (ergAudioThisErg == false) {
+                    if (status & RT_MODE_ERGO && ergTimeRemaining >= 7000) {
+                        ergAudioThisErg = true;
+                    }
+                }
+
+                // alert when approaching end of section
+                if (lapAudioEnabled && ergAudioThisErg) {
+
+                    // alert when 5 seconds from end of ERG lap
+                    bool fPlayAudio = false;
+                    if (status & RT_MODE_ERGO && ergTimeRemaining > 0 && ergTimeRemaining < 5000) {
+                        fPlayAudio = true;
+                    }
+
+                    if (fPlayAudio) {
+                        ergAudioThisErg = false;
+                        QSound::play(":audio/beep.wav");
+                    }
+                }
+		    
+		// Text Cues
                 if (lapPosition > textPositionEmitted) {
                     double searchRange = (status & RT_MODE_ERGO) ? 1000 : 10;
                     int rangeStart, rangeEnd;
