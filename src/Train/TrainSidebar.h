@@ -261,6 +261,7 @@ class TrainSidebar : public GcWindow
         int displayWorkoutLap;     // which Lap in the workout are we at?
         bool lapAudioEnabled;
         bool lapAudioThisLap;
+        bool ergAudioThisErg = false;
         double textPositionEmitted;
         bool useSimulatedSpeed;
 
