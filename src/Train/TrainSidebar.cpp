@@ -1940,9 +1940,9 @@ void TrainSidebar::guiUpdate()           // refreshes the telemetry
                 // alert when approaching end of section
                 if (lapAudioEnabled && ergAudioThisErg) {
 
-                    // alert when 5 seconds from end of ERG lap
+                    // alert when 4 seconds from end of ERG lap
                     bool fPlayAudio = false;
-                    if (status & RT_MODE_ERGO && ergTimeRemaining > 0 && ergTimeRemaining < 5000) {
+                    if (status & RT_MODE_ERGO && ergTimeRemaining > 0 && ergTimeRemaining < 4000) {
                         fPlayAudio = true;
                     }
 
