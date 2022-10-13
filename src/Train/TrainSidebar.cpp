@@ -1948,7 +1948,7 @@ void TrainSidebar::guiUpdate()           // refreshes the telemetry
 
                     if (fPlayAudio) {
                         ergAudioThisErg = false;
-                        QSound::play(":audio/beep.wav");
+                        QSound::play(":audio/lap.wav");
                     }
                 }
 		    
