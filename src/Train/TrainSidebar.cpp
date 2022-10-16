@@ -1248,6 +1248,7 @@ void TrainSidebar::Start()       // when start button is pressed
 #endif
 
         context->mainWindow->showSidebar(false);
+	context->mainWindow->showViewbar(false);
         if (appsettings->value(this, TRAIN_AUTOHIDE, false).toBool()) context->mainWindow->showLowbar(false);
 
         // Stop users from selecting different devices
@@ -1429,6 +1430,7 @@ void TrainSidebar::Stop(int deviceStatus)        // when stop button is pressed
     deviceTree->setEnabled(true);
 
     context->mainWindow->showSidebar(true);
+    context->mainWindow->showViewbar(true);
     if (appsettings->value(this, TRAIN_AUTOHIDE, false).toBool()) context->mainWindow->showLowbar(true);
 
     //reset all calibration data
