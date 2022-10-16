@@ -1248,7 +1248,7 @@ void TrainSidebar::Start()       // when start button is pressed
 #endif
 
         context->mainWindow->showSidebar(false);
-	context->mainWindow->showViewbar(false);
+	context->mainWindow->showToolbar(false);
         if (appsettings->value(this, TRAIN_AUTOHIDE, false).toBool()) context->mainWindow->showLowbar(false);
 
         // Stop users from selecting different devices
@@ -1430,7 +1430,7 @@ void TrainSidebar::Stop(int deviceStatus)        // when stop button is pressed
     deviceTree->setEnabled(true);
 
     context->mainWindow->showSidebar(true);
-    context->mainWindow->showViewbar(true);
+    context->mainWindow->showToolbar(true);
     if (appsettings->value(this, TRAIN_AUTOHIDE, false).toBool()) context->mainWindow->showLowbar(true);
 
     //reset all calibration data
@@ -1944,7 +1944,7 @@ void TrainSidebar::guiUpdate()           // refreshes the telemetry
 
                     // alert when ca. 4 seconds from end of ERG lap
                     bool fPlayAudio = false;
-                    if (status & RT_MODE_ERGO && ergTimeRemaining > 0 && ergTimeRemaining < 4000) {
+                    if (status & RT_MODE_ERGO && ergTimeRemaining > 0 && ergTimeRemaining < 4300) {
                         fPlayAudio = true;
                     }
 
