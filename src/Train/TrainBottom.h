@@ -34,11 +34,13 @@ public:
     TrainBottom(TrainSidebar * trainSidebar, QWidget *parent = 0);
 private:
     TrainSidebar *m_trainSidebar;
+    //ppetc-changes-start
     //QPushButton *m_playButton, *m_rewindButton, *m_stopButton, *m_forwardButton;
     QPushButton *m_playButton, *m_stopButton;
     //QPushButton *m_lapButton, *m_connectButton, *loadDown, *loadUp, *cal, *fwdLap, *backLap;
     QPushButton *m_connectButton, *loadDown;
     //QSlider *intensitySlider;
+    //ppetc-changes-end
     QPlainTextEdit *notificationText;
     QTimer *notificationTimer;
 
