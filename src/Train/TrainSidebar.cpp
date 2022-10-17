@@ -1248,7 +1248,9 @@ void TrainSidebar::Start()       // when start button is pressed
 #endif
 
         context->mainWindow->showSidebar(false);
+	//ppetc-changes-start
 	context->mainWindow->showToolbar(false);
+	//ppetc-changes-end
         if (appsettings->value(this, TRAIN_AUTOHIDE, false).toBool()) context->mainWindow->showLowbar(false);
 
         // Stop users from selecting different devices
@@ -1430,7 +1432,9 @@ void TrainSidebar::Stop(int deviceStatus)        // when stop button is pressed
     deviceTree->setEnabled(true);
 
     context->mainWindow->showSidebar(true);
+    //ppetc-changes-start
     context->mainWindow->showToolbar(true);
+    //ppetc-changes-end
     if (appsettings->value(this, TRAIN_AUTOHIDE, false).toBool()) context->mainWindow->showLowbar(true);
 
     //reset all calibration data
@@ -1932,7 +1936,8 @@ void TrainSidebar::guiUpdate()           // refreshes the telemetry
                     }
                 }
 
-                // alert in sections with 7 seconds and more
+                //ppetc-changes-start
+		// alert in sections with 7 seconds and more
                 if (ergAudioThisErg == false) {
                     if (status & RT_MODE_ERGO && ergTimeRemaining >= 7000) {
                         ergAudioThisErg = true;
@@ -1953,6 +1958,7 @@ void TrainSidebar::guiUpdate()           // refreshes the telemetry
                         QSound::play(":audio/beep.wav");
                     }
                 }
+		//ppetc-changes-end
 		    
 		// Text Cues
                 if (lapPosition > textPositionEmitted) {
