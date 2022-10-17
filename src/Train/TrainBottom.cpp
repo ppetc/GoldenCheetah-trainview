@@ -50,6 +50,7 @@ TrainBottom::TrainBottom(TrainSidebar *trainSidebar, QWidget *parent) :
     m_connectButton->setShortcut(Qt::Key_MediaPrevious);
     toolbuttons->addWidget(m_connectButton);
 
+    //ppetc-changes-start
     //QIcon rewIcon(":images/oxygen/rewind.png");
     //m_rewindButton = new QPushButton(rewIcon, "", this);
     //m_rewindButton->setFocusPolicy(Qt::NoFocus);
@@ -62,6 +63,7 @@ TrainBottom::TrainBottom(TrainSidebar *trainSidebar, QWidget *parent) :
     //m_rewindButton->setAutoRepeatDelay(400);
     //m_rewindButton->setShortcut(Qt::Key_MediaPrevious);
     //toolbuttons->addWidget(m_rewindButton);
+    //ppetc-changes-end
 
     QIcon stopIcon(":images/oxygen/stop.png");
     m_stopButton = new QPushButton(stopIcon, "", this);
@@ -85,6 +87,7 @@ TrainBottom::TrainBottom(TrainSidebar *trainSidebar, QWidget *parent) :
     m_playButton->setShortcut(Qt::Key_MediaTogglePlayPause);
     toolbuttons->addWidget(m_playButton);
 
+    //ppetc-changes-start
     //QIcon fwdIcon(":images/oxygen/ffwd.png");
     //m_forwardButton = new QPushButton(fwdIcon, "", this);
     //m_forwardButton->setFocusPolicy(Qt::NoFocus);
@@ -157,6 +160,7 @@ TrainBottom::TrainBottom(TrainSidebar *trainSidebar, QWidget *parent) :
     //loadUp->setStyleSheet("background-color: rgba( 255, 255, 255, 0% ); border: 0px;");
     //loadUp->setShortcut(Qt::Key_Plus);
     //toolbuttons->addWidget(loadUp);
+    //ppetc-changes-end
 
     QIcon downIcon(":images/oxygen/down.png");
     loadDown = new QPushButton(downIcon, "", this);
@@ -171,6 +175,7 @@ TrainBottom::TrainBottom(TrainSidebar *trainSidebar, QWidget *parent) :
     loadDown->setShortcut(Qt::Key_Minus);
     toolbuttons->addWidget(loadDown);
 
+    //ppetc-changes-start
     //intensitySlider = new QSlider(Qt::Vertical, this);
     //intensitySlider->setAutoFillBackground(false);
     //intensitySlider->setFocusPolicy(Qt::NoFocus);
@@ -178,6 +183,7 @@ TrainBottom::TrainBottom(TrainSidebar *trainSidebar, QWidget *parent) :
     //intensitySlider->setMaximum(125);
     //intensitySlider->setValue(100);
     //toolbuttons->addWidget(intensitySlider);
+    //ppetc-changes-end
 
     // notification area
     QHBoxLayout *notifications = new QHBoxLayout();
@@ -187,10 +193,14 @@ TrainBottom::TrainBottom(TrainSidebar *trainSidebar, QWidget *parent) :
     notificationText = new QPlainTextEdit();
     notifications->addWidget(notificationText);
 
+    //ppetc-changes-start
     QFont font("Helvetica [Cronyx]");
     //font.setStyleHint(QFont::TypeWriter);
     font.setBold(0);
+    //font.setBold(1);
     font.setPointSize(21);
+    //font.setPointSize(14);
+    //ppetc-changes-end
 
     notificationText->setFont(font);
     notificationText->setStyleSheet("QPlainTextEdit {background-color: black; color: red}");
@@ -207,11 +217,13 @@ TrainBottom::TrainBottom(TrainSidebar *trainSidebar, QWidget *parent) :
     allControlsLayout->addLayout(notifications);
 
     connect(m_playButton, SIGNAL(clicked()), m_trainSidebar, SLOT(Start()));
+    //ppetc-changes-start
     //connect(m_rewindButton, SIGNAL(clicked()), m_trainSidebar, SLOT(Rewind()));
     //connect(m_forwardButton, SIGNAL(clicked()), m_trainSidebar, SLOT(FFwd()));
     //connect(backLap, SIGNAL(clicked()), m_trainSidebar, SLOT(RewindLap()));
     //connect(m_lapButton, SIGNAL(clicked()), m_trainSidebar, SLOT(newLap()));
     //connect(fwdLap, SIGNAL(clicked()), m_trainSidebar, SLOT(FFwdLap()));
+    //ppetc-changes-end
     connect(m_stopButton, SIGNAL(clicked()), m_trainSidebar, SLOT(Stop()));
     connect(m_trainSidebar->context, SIGNAL(start()), this, SLOT(updatePlayButtonIcon()));
     connect(m_trainSidebar->context, SIGNAL(pause()), this, SLOT(updatePlayButtonIcon()));
@@ -220,12 +232,18 @@ TrainBottom::TrainBottom(TrainSidebar *trainSidebar, QWidget *parent) :
     //connect(hideOnIdle, SIGNAL(stateChanged(int)), this, SLOT(autoHideCheckboxChanged(int)));
     connect(m_trainSidebar, SIGNAL(statusChanged(int)), this, SLOT(statusChanged(int)));
     connect(m_connectButton, SIGNAL(released()), m_trainSidebar, SLOT(toggleConnect()));
+    //ppetc-changes-start
     //connect(cal, SIGNAL(clicked()), m_trainSidebar, SLOT(Calibrate()));
+    //ppetc-changes-end
 
+    //ppetc-changes-start
     //connect(loadUp, SIGNAL(clicked()), m_trainSidebar, SLOT(Higher()));
+    //ppetc-changes-end
     connect(loadDown, SIGNAL(clicked()), m_trainSidebar, SLOT(Lower()));
+    //ppetc-changes-start
     //connect(intensitySlider, SIGNAL(valueChanged(int)), m_trainSidebar, SLOT(adjustIntensity(int)));
     //connect(m_trainSidebar, SIGNAL(intensityChanged(int)), intensitySlider, SLOT(setValue(int)));
+    //ppetc-changes-end
 
     connect(m_trainSidebar, SIGNAL(setNotification(QString, int)), this, SLOT(setNotification(QString, int)));
     connect(m_trainSidebar, SIGNAL(clearNotification(void)), this, SLOT(clearNotification(void)));
