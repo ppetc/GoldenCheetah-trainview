@@ -57,7 +57,7 @@
 
 //Strava / see also Athlete parameter, default value.
 #ifndef GC_STRAVA_CLIENT_ID
-#define GC_STRAVA_CLIENT_ID    "83" // client id
+#define GC_STRAVA_CLIENT_ID    "95624" // client id
 #endif
 
 
