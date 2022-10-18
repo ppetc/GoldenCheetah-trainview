@@ -186,9 +186,7 @@
         <file>images/oxygen/up.png</file>
         <file>images/oxygen/down.png</file>
         <file>audio/lap.wav</file>
-        //ppetc-changes-start
         <file>audio/beep.wav</file>
-        //ppetc-changes-end
         <file>images/configure.png</file>
         <file>images/toolbar/cloud.png</file>
         <file>images/services/strava_compatible.png</file>
