@@ -1932,9 +1932,9 @@ void TrainSidebar::guiUpdate()           // refreshes the telemetry
                     }
                 }
 
- 		// alert in sections with 7 seconds and more
+ 		// alert in sections with more than 5 seconds
                 if (ergAudioThisErg == false) {
-                    if (status & RT_MODE_ERGO && ergTimeRemaining >= 7000) {
+                    if (status & RT_MODE_ERGO && ergTimeRemaining > 5000) {
                         ergAudioThisErg = true;
                     }
                 }
@@ -1944,7 +1944,7 @@ void TrainSidebar::guiUpdate()           // refreshes the telemetry
 
                     // alert when ca. 3 seconds from end of ERG lap
                     bool fPlayAudio = false;
-                    if (status & RT_MODE_ERGO && ergTimeRemaining > 0 && ergTimeRemaining < 3600) {
+                    if (status & RT_MODE_ERGO && ergTimeRemaining > 0 && ergTimeRemaining < 3600 && lapTimeRemaining > 5000) {
                         fPlayAudio = true;
                     }
 
