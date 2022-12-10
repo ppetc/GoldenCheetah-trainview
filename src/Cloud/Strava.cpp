@@ -339,7 +339,7 @@ Strava::writeFile(QByteArray &data, QString remotename, RideFile *ride)
     else if (ride->sport() == "Gym")
       activityTypePart.setBody("WeightTraining");
     else
-      activityTypePart.setBody("Ride");
+      activityTypePart.setBody("VirtualRide");
     multiPart->append(activityTypePart);
 
     QHttpPart activityNamePart;
