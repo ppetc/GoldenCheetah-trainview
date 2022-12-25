@@ -2141,8 +2141,8 @@ void TrainSidebar::diskUpdate()
     recordFileStream    << secs
                         << "," << displayCadence
                         << "," << displayHeartRate
-                        << "," << displayDistance
-                        << "," << displaySpeed
+                        << "," << 0
+                        << "," << 0
                         << "," << torq
                         << "," << displayPower;
 
