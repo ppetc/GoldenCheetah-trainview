@@ -147,8 +147,6 @@ public:
 
         bool textsInRange(double searchStart, double searchRange, int& rangeStart, int& rangeEnd) const;
 
-        int nextText(long);     // return the index for the next text cue
-    
         // turn the ergfile into a series of sections rather
         // than a list of points
         QList<ErgFileSection> Sections();
