@@ -1667,6 +1667,7 @@ ErgFile::currentLap(double x) const
     return -1; // No matching lap
 }
 
+//textcues-old
 // Retrieve the index of next text cue.
 // Params: x - current workout distance (m) / time (ms)
 // Returns: index of next text cue.
