@@ -147,6 +147,7 @@ public:
 
         bool textsInRange(double searchStart, double searchRange, int& rangeStart, int& rangeEnd) const;
 
+        //textcues-old
         int nextText(long);     // return the index for the next text cue
     
         // turn the ergfile into a series of sections rather
