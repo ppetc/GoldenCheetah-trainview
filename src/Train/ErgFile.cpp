@@ -1667,20 +1667,6 @@ ErgFile::currentLap(double x) const
     return -1; // No matching lap
 }
 
-// Retrieve the index of next text cue.
-// Params: x - current workout distance (m) / time (ms)
-// Returns: index of next text cue.
-int ErgFile::nextText(long x)
-{
-    if (!isValid()) return -1; // not a valid ergfile
-
-    // If the current position is before the text, then the text is next
-    for (int i=0; i<Texts.count(); i++) {
-        if (x <= Texts.at(i).x) return i;
-    }
-    return -1; // nope, no marker ahead of there
-}
-
 // Adds new lap at location, returns index of new lap
 int
 ErgFile::addNewLap(double loc) const
