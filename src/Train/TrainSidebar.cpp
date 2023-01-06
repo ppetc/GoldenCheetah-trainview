@@ -1967,8 +1967,7 @@ void TrainSidebar::guiUpdate()           // refreshes the telemetry
                 //    textPositionEmitted = lapPosition + searchRange;
                 //}
 
-                //textcues-old
-		// Text Cues
+                // Text Cues
                 if (ergFile && ergFile->Texts.count() > 0) {
                     // find the next cue
                     double pos = status&RT_MODE_ERGO ? load_msecs : displayWorkoutDistance*1000;
