@@ -1956,7 +1956,7 @@ void TrainSidebar::guiUpdate()           // refreshes the telemetry
 		    
 		// Text Cues
                 if (lapPosition > textPositionEmitted) {
-                    double searchRange = (status & RT_MODE_ERGO) ? 1500 : 10;
+                    double searchRange = (status & RT_MODE_ERGO) ? 1000 : 10;
                     int rangeStart, rangeEnd;
                     if (ergFileQueryAdapter.textsInRange(lapPosition, searchRange, rangeStart, rangeEnd)) {
                         for (int idx = rangeStart; idx <= rangeEnd; idx++) {
