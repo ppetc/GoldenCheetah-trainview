@@ -653,7 +653,7 @@ void ErgFile::parseComputrainer(QString p)
                 // x, text cue, duration
                 double x = textCue.cap(1).toDouble() * 1000.; // convert to msecs or m
                 int duration = textCue.cap(3).toInt(); // duration in secs
-                Texts<<ErgFileText(x, duration, textCue.cap(2).trimmed());
+                Texts<<ErgFileText(x, duration, textCue.cap(2));
             } else {
               // ignore bad lines for now. just bark.
               //qDebug()<<"huh?" << line;
@@ -827,22 +827,13 @@ void ErgFile::parseFromRideFileFactory()
         Points.append(add);
     }
 
-    // Add intervals as lap markers and text cues
-    int i = 0;
+    // Add interval names as text cues
     foreach(const RideFileInterval* lap, ride->intervals()) {
         double x = ride->timeToDistance(lap->start) * 1000.0;
-        double y = ride->timeToDistance(lap->stop) * 1000.0;
         int duration = lap->stop - lap->start + 1;
-        if (x > 0 && duration > 0 && !lap->name.isEmpty()) {
-            // In order to support navigation, each interval is converted into
-            // two laps that are linked by sharing a non-zero group id.
-            Laps<<ErgFileLap(x, 2*i+1, i+1, lap->name);
-            Laps<<ErgFileLap(y, 2*i+2, i+1, "");
-            i++;
+        if (x > 0 && duration > 0 && !lap->name.isEmpty())
             Texts<<ErgFileText(x, duration, lap->name);
-        }
     }
-
     gpxFile.close();
 
     valid = true;
@@ -1121,8 +1112,18 @@ void ErgFile::parseTTS()
 
     // Sort laps and texts
     sortLaps();
-    sortTexts();
 
+    std::sort(Texts.begin(), Texts.end(), [](const ErgFileText& a, const ErgFileText& b) {
+        // If distance is the same the lesser distance comes first.
+        if (a.x == b.x) return a.duration < b.duration;
+        return a.x < b.x;
+    });
+
+    // Renumber laps to follow the sorted entry distance order:
+    int lapNum = 1;
+    for (auto &a : Laps) {
+        a.LapNum = lapNum++;
+    }
     // This is load time so debug print isn't so expensive.
     // Laps seem pretty buggy right now. Lets debug print the data
     // to help people figure out what is happening.
@@ -1578,15 +1579,6 @@ void ErgFile::sortLaps() const
     }
 }
 
-void ErgFile::sortTexts() const
-{
-    std::sort(Texts.begin(), Texts.end(), [](const ErgFileText& a, const ErgFileText& b) {
-        // If distance is the same the lesser distance comes first.
-        if (a.x == b.x) return a.duration < b.duration;
-        return a.x < b.x;
-    });
-}
-
 void ErgFile::finalize()
 {
     if (Laps.count() == 0) {
@@ -1689,37 +1681,20 @@ ErgFile::addNewLap(double loc) const
     return -1;
 }
 
-bool ErgFile::textsInRange(double searchStart, double searchRange, int& rangeStart, int& rangeEnd) const
+// Retrieve the index of next text cue.
+// Params: x - current workout distance (m) / time (ms)
+// Returns: index of next text cue.
+int ErgFile::nextText(long x)
 {
-    bool retVal = false;
+    if (!isValid()) return -1; // not a valid ergfile
 
-    if (isValid()) {
-
-        searchStart = std::floor(searchStart);
-
-        // find first text in range, continue to last text in range.
-        rangeStart = -1;
-        rangeEnd = -1;
-
-        double searchLimit = searchStart + searchRange;
-
-        for (int i = 0; i < Texts.count(); i++) {
-            double distance = Texts.at(i).x;
-            if (distance >= searchStart && distance <= searchLimit) {
-                if (rangeStart < 0) {
-                    rangeStart = i;
-                    retVal = true;
-                }
-                rangeEnd = i;
-            }
-
-            // Texts are sorted by distance so no need to look further.
-            if (distance > searchLimit)
-                break;
-        }
+    // If the current position is before the text, then the text is next
+    for (int i=0; i<Texts.count(); i++) {
+        if (x <= Texts.at(i).x) return i;
     }
-    return retVal;
+    return -1; // nope, no marker ahead of there
 }
+
 
 void
 ErgFile::calculateMetrics()
