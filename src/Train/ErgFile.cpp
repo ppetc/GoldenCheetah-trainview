@@ -1684,7 +1684,7 @@ ErgFile::addNewLap(double loc) const
 // Retrieve the index of next text cue.
 // Params: x - current workout distance (m) / time (ms)
 // Returns: index of next text cue.
-int ErgFile::nextText(long x)
+int ErgFile::nextText(double x) const
 {
     if (!isValid()) return -1; // not a valid ergfile
 

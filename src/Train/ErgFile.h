@@ -143,7 +143,7 @@ public:
         double prevLap(double) const;    // return the start value (erg - time(ms) or slope - distance(m)) for the prev lap
         double currentLap(double) const; // return the start value (erg - time(ms) or slope - distance(m)) for the current lap
 
-        int nextText(long);     // return the index for the next text cue
+        int nextText(double) const;     // return the index for the next text cue
 
 
         int    addNewLap(double loc) const; // creates new lap at location, returns index of new lap.
@@ -239,7 +239,7 @@ public:
     double nextLap   (double x) const { return !ergFile ? -1 : ergFile->nextLap(x);    }
     double prevLap   (double x) const { return !ergFile ? -1 : ergFile->prevLap(x);    }
     double currentLap(double x) const { return !ergFile ? -1 : ergFile->currentLap(x); }
-//    int    nextText  (double x) const { return !ergFile ? -1 : ergFile->nextText(x);   }
+    int    nextText  (double x) const { return !ergFile ? -1 : ergFile->nextText(x);   }
 
     double currentTime() const { return !ergFile ? 0. : ergFile->Points.at(qs.rightPoint).x; }
 
