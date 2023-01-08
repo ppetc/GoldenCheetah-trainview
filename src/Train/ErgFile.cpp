@@ -653,7 +653,7 @@ void ErgFile::parseComputrainer(QString p)
                 // x, text cue, duration
                 double x = textCue.cap(1).toDouble() * 1000.; // convert to msecs or m
                 int duration = textCue.cap(3).toInt(); // duration in secs
-                Texts<<ErgFileText(x, duration, textCue.cap(2));
+                Texts<<ErgFileText(x, duration, textCue.cap(2).trimmed());
             } else {
               // ignore bad lines for now. just bark.
               //qDebug()<<"huh?" << line;
