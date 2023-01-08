@@ -239,7 +239,7 @@ public:
     double nextLap   (double x) const { return !ergFile ? -1 : ergFile->nextLap(x);    }
     double prevLap   (double x) const { return !ergFile ? -1 : ergFile->prevLap(x);    }
     double currentLap(double x) const { return !ergFile ? -1 : ergFile->currentLap(x); }
-    int    nextText  (double x) const { return !ergFile ? -1 : ergFile->nextText(x);   }
+//    int    nextText  (double x) const { return !ergFile ? -1 : ergFile->nextText(x);   }
 
     double currentTime() const { return !ergFile ? 0. : ergFile->Points.at(qs.rightPoint).x; }
 
