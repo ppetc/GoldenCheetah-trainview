@@ -1,6 +1,9 @@
 build_cloud: PC02-250
 image: Windows
 clone_depth: 1
+branches:
+   only:
+      - textcuesold
 
 environment:
   GC_GOOGLE_CALENDAR_CLIENT_SECRET:
