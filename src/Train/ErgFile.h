@@ -136,7 +136,7 @@ class ErgFile
 
 private:
         void sortLaps() const;
-        void sortTexts() const;
+
 public:
 
         double nextLap(double) const;    // return the start value (erg - time(ms) or slope - distance(m)) for the next lap

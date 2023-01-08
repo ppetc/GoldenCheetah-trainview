@@ -1601,7 +1601,6 @@ void ErgFile::finalize()
     }
 
     sortLaps();
-    sortTexts();
 }
 
 bool
