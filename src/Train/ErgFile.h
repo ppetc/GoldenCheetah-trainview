@@ -77,7 +77,7 @@ class ErgFileText
 {
     public:
         ErgFileText() : x(0), duration(0), text("") {}
-        ErgFileText(double x, int duration, QString &text) : x(x), duration(duration), text(text) {}
+        ErgFileText(double x, int duration, QString text) : x(x), duration(duration), text(text) {}
 
         double x;
         int duration;
